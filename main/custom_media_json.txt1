@@ -1,0 +1,35 @@
+Page;
+Page_Begin;
+Page_Middle;
+Page_End;
+;
+File;
+File_Begin;{
+File_Middle;,
+File_End;}
+;
+General;""format"": ""%Format%"",""size"": $if(%FileSize%,%FileSize%,0),""audiocount"": $if(%AudioCount%,%AudioCount%,0), ""videocount"": $if(%VideoCount%,%VideoCount%,0), ""bitrate"": $if(%OverallBitRate%,%OverallBitRate%,0),""duration"": $if(%Duration%,%Duration%,0)
+General_Begin;""general"":{
+General_Middle;
+General_End;}
+;
+Video;{""order"":$if(%StreamOrder%,%StreamOrder%,0),""width"": $if(%Width%,%Width%,0),""height"": $if(%Height%,%Height%,0),""format"": ""%Format%"",""bitrate_mode"": ""%BitRate_Mode%"", ""fps"": $if(%FrameRate%,%FrameRate%,0),""bitrate"": $if(%BitRate%,%BitRate%,0),""bitdepth"": $if(%BitDepth%, %BitDepth%, 0), ""format2"":""%Format_Profile%"",""duration"": $if(%Duration%, %Duration%, 0), ""settings"":""%Format_Settings%"",""pixelaspect"": ""%PixelAspectRatio%"", ""displayaspect"":""%DisplayAspectRatio%"", ""streamsize"": $if(%StreamSize%,%StreamSize%,0), ""rotation"": ""%Rotation%""}
+Video_Begin;,""video"":[
+Video_Middle;,
+Video_End;]
+;
+Audio;{""order"":$if(%StreamOrder%,%StreamOrder%,0),""default"": ""%Default%"",""format"": ""%Format%"",""format2"":""%Format_AdditionalFeatures%"", ""ch"": %Channel(s)%,""ch_pos"": ""%ChannelPositions%"",""duration"": $if(%Duration%, %Duration%, 0), ""sample_rate"": ""%SamplingRate%"",""codec"": ""%CodecID%"",""bitrate"": $if(%BitRate%,%BitRate%,0),""bitrate_mode"": ""%BitRate_Mode%"", ""language"": ""%Language%"" }
+Audio_Begin;,""audio"":[
+Audio_Middle;,
+Audio_End;]
+;
+Text; ""%Language%""
+Text_Begin;,'Subs':[
+Text_Middle;,
+Text_End;]
+;
+Image;{""format"": ""%Format%"",""formatcompression"": ""%Format_Compression%"",""width"": $if(%Width%,%Width%,0),""height"": $if(%Height%,%Height%,0),""bitdepth"": $if(%BitDepth%,%BitDepth%,0),""compressionmode"": ""%Compression_Mode%"",""streamsize"": $if(%StreamSize%,%StreamSize%,0)}
+Image_Begin;,""image"":[
+Image_Middle;,
+Image_End;]
+;

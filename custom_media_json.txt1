@@ -1,0 +1,30 @@
+Page;
+Page_Begin;
+Page_Middle;
+Page_End;
+;
+File;
+File_Begin;{
+File_Middle;,
+File_End;}
+;
+General;""size"": %FileSize%,""bitrate"": %OverallBitRate%,""duration"": %Duration%,""created"": ""%File_Created_Date%"",""modified"": ""%File_Modified_Date%"",""encoded"": ""%Encoded_Date%"",""tagged"": ""%Tagged_Date%"",""menu"": $if(%MenuCount%,true,false)
+General_Begin;""general"":{
+General_Middle;
+General_End;}
+;
+Video;{""width"": %Width%,""height"": %Height%,""codec"": ""%Format%"",""fps"": $if(%FrameRate%,%FrameRate%,false),""bitrate"": $if(%BitRate%,%BitRate%,false),""profile"":$if(%Format_Profile%, ""%Format_Profile%"", false),""settings"":$if(%Format_Settings%, ""%Format_Settings%"", false),""aspect"":$if(%DisplayAspectRatio%, ""%DisplayAspectRatio/String%"", false)}
+Video_Begin;,""video"":[
+Video_Middle;,
+Video_End;]
+;
+Audio;{""ch"": %Channel(s)%,""ch_pos"": ""%ChannelPositions%"",""sample_rate"": ""%SamplingRate%"",""codec"": ""%Codec%"",""bitrate"": $if(%BitRate%,%BitRate%,false),""bitrate_mode"": ""$if(%BitRate_Mode%,%BitRate_Mode%,false)"",""lang"": $if(%Language%, ""%Language%"",false)}
+Audio_Begin;,""audio"":[
+Audio_Middle;,
+Audio_End;]
+;
+Text; ""%Language%""
+Text_Begin;,'Subs':[
+Text_Middle;,
+Text_End;]
+;
